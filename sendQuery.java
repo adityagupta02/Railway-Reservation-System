@@ -42,7 +42,6 @@ class sendQuery implements Runnable
             FileWriter filewriter = new FileWriter(output);
             Scanner queryScanner = new Scanner(queries);
             String query = "";
-            //--------------------------------------------------------------------
 
             // Read input queries and write to the output stream
             while(queryScanner.hasNextLine())

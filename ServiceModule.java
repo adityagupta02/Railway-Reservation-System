@@ -49,7 +49,7 @@ class QueryRunner implements Runnable
             PrintWriter printWriter = new PrintWriter(bufferedOutput, true) ;
             String clientCommand = "" ;
             String sql = "ALTER DATABASE dbms_project SET DEFAULT_TRANSACTION_ISOLATION TO 'serializable';";
-            stmt.executeQuery(sql);
+            //stmt.executeQuery(sql);
             // Read client query from the socket endpoint
             clientCommand = bufferedInput.readLine(); 
 
@@ -147,7 +147,6 @@ class QueryRunner implements Runnable
                     stmt1.close();
                 }   
 
-                // Printing ticket
                 sql = "select * from tickets_booked where pnr = ?";
                 PreparedStatement stmt1 = c.prepareStatement(sql);
                 stmt1.setString(1, pnr);                
